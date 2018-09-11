@@ -13,6 +13,9 @@ country = input("> ")
 print("And what city are you in?")
 city = input ("> ")
 
+country = country.lower()
+city = city.lower()
+
 # fetch list of cities and their IDs
 try: 
     with urllib.request.urlopen(dataUrl) as response:
@@ -30,4 +33,4 @@ except URLError as e:
 
 # json file is zipped so need to unzip
 with gzip.open(BytesIO(tmp)) as f:
-    cityList = json.loads(f.read())
+    locations = json.loads(f.read())
