@@ -40,7 +40,7 @@ for entry in locations:
         cityID = entry['id']
 
 if cityID == 0:
-    print ("Your city was not found. Program exited")
+    print ("Your city was not found. Program exited.")
     exit()
 
 # API call to get weather, using necessary parameters
