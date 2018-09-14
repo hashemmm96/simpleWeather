@@ -15,7 +15,7 @@ city = input ("> ")
 city = city.casefold() # for case insensitive matching
 
 # fetch list of cities and their IDs
-try: 
+try:
     with urllib.request.urlopen(dataURL) as response:
         with tempfile.TemporaryFile() as tmp:
             tmp = response.read()
@@ -38,6 +38,7 @@ cityID = 0
 for entry in locations:
     if entry['name'].casefold() == city:
         cityID = entry['id']
+        break
 
 if cityID == 0:
     print ("Your city was not found. Program exited.")
